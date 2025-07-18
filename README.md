@@ -64,7 +64,7 @@ These stakeholders care about improving profitability, customer retention, and t
 - Data Visualization (matplotlib, seaborn)
 - Feature Engineering (pandas, one-hot encoding, quantile thresholds)
 - GitHub (collaboration and version control)
-- 
+- Multiple Linear Regression Model (statsmodels, sklearn)
 - 
 - 
 
@@ -74,6 +74,20 @@ These stakeholders care about improving profitability, customer retention, and t
 - Sample size (1,000 rows) may limit classification performance
 - Potential for overfitting if too many engineered features are added
 - The relationship between variables like age and quantity may be weak or non-linear
+
+---
+
+## Tasks & Timeline
+
+| Team Member | Task |
+|-------------|------|
+| Iryna       | Data exploration, feature engineering |
+| Imra        | Conducting regression modeling |
+| Vrushali    | Conducting classification modeling |
+| Tetiana     | Writing conclusions, maintaining narrative |
+| Mandy       | Presentation development |
+
+---
 
 ## Regression Model
 
@@ -134,6 +148,7 @@ Kurtosis:                       1.640   Cond. No.                     2.63e+03
 ==============================================================================
 
 **Model Objective:**
+
 Predict Quantity purchased based on unit price, age group, gender, and their interactions.
 
 **Model Fit:**
@@ -145,7 +160,7 @@ Predict Quantity purchased based on unit price, age group, gender, and their int
 
 **Key Findings:**
 
-- `Price per Unit`: Higher prices slightly increases Quantity on average. The effect is small but statistically significant at 1% level. 
+- `Price per Unit`: Higher prices slightly increases quantity on average. The effect is small but statistically significant at 1% level. 
 
 - `Gender` (Female vs. Male): No clear evidence of gender-based differences in purchase quantity.
 
@@ -174,13 +189,3 @@ Predict Quantity purchased based on unit price, age group, gender, and their int
 - To assess the model's ability to generalize beyond the data it was trained on, we randomly split the dataset into a training set (75%) and a test set (25%). The results indicate that the model performs poorly on unseen data with considerable percentage error in predictions.
 
 ---
-
-## Tasks & Timeline
-
-| Team Member | Task |
-|-------------|------|
-| Iryna       | Data exploration, feature engineering |
-| Imra        | Conducting regression modeling |
-| Vrushali    | Conducting classification modeling |
-| Tetiana     | Writing conclusions, maintaining narrative |
-| Mandy       | Presentation development |
