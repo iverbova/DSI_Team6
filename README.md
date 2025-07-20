@@ -231,6 +231,7 @@ This section explores key patterns in the dataset through visualizations:
 - Average order values and price distributions
 
 **Exploratory Insights**:
+Understanding these patterns can help businesses adjust pricing, better segment customers, and tailor campaigns more effectively.
 
 - Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year:
 
@@ -257,4 +258,49 @@ Age Groups: Customers aged 40-60 make the largest contribution, followed by thos
 These findings will guide our feature engineering and modeling decisions in the next phase.
   - 
  
-  - 
+**02 - Feature Engineering**
+ Turning Raw Data into Insightful Features
+ 
+ Before a model can make good predictions, we need to give it the right data — this process is called feature engineering. We transformed basic retail data into useful features.
+These new features help our models recognize patterns more clearly — like spotting who’s a likely big spender or when sales spike during the week.
+
+We will generate all relevant features needed for our classification and regression models, including:
+- Categorical encodings
+- Temporal features
+- Interaction-ready variables
+- Target variable for classification
+
+At the end, we’ll export a clean `processed_data.csv` to be used for modeling.
+
+We grouped ages, tracked purchase timing, and tagged customers as high or low spenders — all of which helps our model understand behavior.
+
+To simplify linear regression modeling, we also create numeric encodings for:
+- Gender: Male = 0, Female = 1
+- Age Group: `<25` = 1, `25-40` = 2, `40-60` = 3, `60+` = 4
+- Product Category: Clothing = 1, Electronics = 2, Beauty = 3
+
+![alt text](images/01_data_exploration/feature_engineering_descision_table.jpg)
+
+ Example: 
+From original:
+
+Age = 43
+
+Gender = Female
+
+Product = Electronics
+
+After Transformation:
+
+Age Group = 40–60
+
+Gender = 1
+
+Product Code = 2
+
+This is what feature engineering looks like — we convert human-friendly info into model-friendly numbers.
+
+Our goal is to teach the model to recognize which customers are likely to spend more — so we created this target feature.
+
+With our engineered dataset, we can move confidently into building models that provide useful insights for decision-making.
+
