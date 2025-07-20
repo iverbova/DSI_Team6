@@ -91,7 +91,7 @@ These stakeholders care about improving profitability, customer retention, and t
 
 ##  Data Exploration
 
-In this section, we take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
+We take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
 
 Objectives:
 
