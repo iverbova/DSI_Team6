@@ -100,7 +100,7 @@ Create exploratory visualizations
 Produce statistical summaries
 Identify insights to address business-related questions
 
-Our main goal is to explore how factors like product price, product type, age, and gender influence buying habits and total sales.
+- Our main goal is to explore how factors like product price, product type, age, and gender influence buying habits and total sales.
 
 **Dataset Overview**
 
@@ -115,11 +115,11 @@ We worked with a clean dataset of 1,000 retail transactions. The key features in
 - `Quantity`: Number of items purchased
 - `Price per Unit`: Cost per item
 - `Total Amount`: Transaction value = `Quantity × Price per Unit`
-  All columns are well-formatted. There are no missing or duplicate values, and the calculated field `Total Amount` is consistent with `Quantity * Price per Unit`.
+-  All columns are well-formatted. There are no missing or duplicate values, and the calculated field `Total Amount` is consistent with `Quantity * Price per Unit`.
 
  **Exploratory Data Analysis (EDA)**
 Before modeling, we ensured our data was accurate. We removed duplicates, fixed missing values, and validated key calculations like price x quantity.
-This section explores key patterns in the dataset through visualizations:
+- This section explores key patterns in the dataset through visualizations:
 - Sales trends
 - Purchase behavior by category, gender, and age
 - Average order values and price distributions
@@ -158,7 +158,7 @@ These findings will guide our feature engineering and modeling decisions in the 
  Before a model can make good predictions, we need to give it the right data — this process is called feature engineering. We transformed basic retail data into useful features.
 These new features help our models recognize patterns more clearly — like spotting who’s a likely big spender or when sales spike during the week.
 
-We will generate all relevant features needed for our classification and regression models, including:
+-We will generate all relevant features needed for our classification and regression models, including:
 - Categorical encodings
 - Temporal features
 - Interaction-ready variables
