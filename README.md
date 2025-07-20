@@ -195,9 +195,9 @@ Predict Quantity purchased based on unit price, age group, gender, and their int
 ---
 
 
-01 - Data Exploration
+**01 - Data Exploration**
 
-This notebook is part of a team project for the Data Science Certificate at the University of Toronto's Data Sciences Institute. In this section, we take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
+In this section, we take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
 
 Objectives:
 
@@ -208,7 +208,7 @@ Identify insights to address business-related questions
 
 Our main goal is to explore how factors like product price, product type, age, and gender influence buying habits and total sales.
 
-Dataset Overview
+**Dataset Overview**
 
 This dataset contains 1,000 retail transactions with the following features:
 
@@ -223,14 +223,14 @@ This dataset contains 1,000 retail transactions with the following features:
 - `Total Amount`: Transaction value = `Quantity × Price per Unit`
   All columns are well-formatted. There are no missing or duplicate values, and the calculated field `Total Amount` is consistent with `Quantity * Price per Unit`.
 
-  Exploratory Data Analysis (EDA)
+ **Exploratory Data Analysis (EDA)**
 
 This section explores key patterns in the dataset through visualizations:
 - Sales trends
 - Purchase behavior by category, gender, and age
 - Average order values and price distributions
 
-Exploratory Insights:
+**Exploratory Insights**:
 
 - Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year:
 
