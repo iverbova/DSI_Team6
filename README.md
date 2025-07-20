@@ -210,7 +210,7 @@ Our main goal is to explore how factors like product price, product type, age, a
 
 **Dataset Overview**
 
-This dataset contains 1,000 retail transactions with the following features:
+We worked with a clean dataset of 1,000 retail transactions. The key features included product information, price, quantity, and demographic data like age and gender.
 
 - `Transaction ID`: Unique identifier per transaction
 - `Date`: Transaction date
@@ -224,7 +224,7 @@ This dataset contains 1,000 retail transactions with the following features:
   All columns are well-formatted. There are no missing or duplicate values, and the calculated field `Total Amount` is consistent with `Quantity * Price per Unit`.
 
  **Exploratory Data Analysis (EDA)**
-
+Before modeling, we ensured our data was accurate. We removed duplicates, fixed missing values, and validated key calculations like price x quantity.
 This section explores key patterns in the dataset through visualizations:
 - Sales trends
 - Purchase behavior by category, gender, and age
