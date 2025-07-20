@@ -14,7 +14,7 @@ The raw dataset is stored in the `data/raw/` directory.
 - Iryna Verbova ([iverbova](https://github.com/iverbova))
 - Tetiana Hakansson ([t125yf](https://github.com/t125yf))
 - Rabia Imra Kirli Ozis ([rabiaimra](https://github.com/rabiaimra))
-- Ting Man
+- Ting Man([manntintin](https://github.com/manntintin))
 - Vrushali Patil ([vrushalipatil9763](https://github.com/vrushalipatil9763))
 
 ## Business Problem
