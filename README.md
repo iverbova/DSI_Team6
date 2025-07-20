@@ -197,15 +197,17 @@ Predict Quantity purchased based on unit price, age group, gender, and their int
 
 01 - Data Exploration
 
-This notebook is part of a team project for the Data Science Certificate at the University of Toronto's Data Sciences Institute. We perform initial data exploration of the Retail Sales Dataset and provide actionable insights for further modeling.
+This notebook is part of a team project for the Data Science Certificate at the University of Toronto's Data Sciences Institute. In this section, we take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
 
-Objectives
-- Understand dataset structure
-- Perform exploratory visualizations
-- Generate statistical summaries
-- Identify insights for business questions
+Objectives:
 
-Our main business goal is to explore how price per unit, product category, age, and gender impact purchasing behavior and sales totals.
+Examine the dataset's structure
+Create exploratory visualizations
+Produce statistical summaries
+Identify insights to address business-related questions
+
+Our main goal is to explore how factors like product price, product type, age, and gender influence buying habits and total sales.
+
 Dataset Overview
 
 This dataset contains 1,000 retail transactions with the following features:
@@ -228,28 +230,28 @@ This section explores key patterns in the dataset through visualizations:
 - Purchase behavior by category, gender, and age
 - Average order values and price distributions
 
-Exploratory Insights
+Exploratory Insights:
 
-- Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year.
+- Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year:
 
 ![alt text](images/01_data_exploration/sales_trend_over_time.png)
 
-Product Category: Electronics contributes the highest revenue, followed by Clothing and Beauty.
+Product Category: Electronics contributes the highest revenue, followed by Clothing and Beauty:
 ![alt text](images/01_data_exploration/total_sales_by_product_category.png)
 ![alt text](images/01_data_exploration/sales_distribution_by_product_category_pie.png)
 
-- Gender Split: Females account for slightly higher overall sales compared to males.
+- Gender Split: Females account for slightly higher overall sales compared to males:
 - ![alt text](images/01_data_exploration/total_sales_by_gender.png)
   ![alt text](images/01_data_exploration/sales_distribution_by_gender.png)
 
-  Age Segments: Customers aged 25-40 and 40-60 contribute the most to sales volume.
+Age Groups: Customers aged 40-60 make the largest contribution, followed by those aged 25-40, who also significantly contribute to sales volume:
     ![alt text](images/01_data_exploration/total_sales_by_age_group.png)
-     ![alt text](images/01_data_exploration/sales_distribution_by_age_group.png)
+     ![alt text](images/01_data_exploration/sales_pie_by_age_group.png)
   
 - Average Order Value (AOV): Around $456.00.
-![alt text](images/AOV.png)
+![alt text](images/01_data_exploration/AOV.png)
 
-  - Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
+- Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
  ![alt text](images/01_data_exploration/average_price_per_unit_product_category.png)
 
 These findings will guide our feature engineering and modeling decisions in the next phase.
