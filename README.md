@@ -312,3 +312,19 @@ Our goal is to teach the model to recognize which customers are likely to spend 
 
 With our engineered dataset, we can move confidently into building models that provide useful insights for decision-making.
 
+
+**03 Regression Model**
+To better understand the factors that drive product purchase quantity in a retail context, we developed a linear regression model using transactional data. The goal was to examine how unit price, customer demographics (age group and gender), and their interactions influence the quantity of items purchased in a single transaction.
+
+Model formula:
+Quantity = β0 + β1*(Price per Unit) + β2*(Age Group) + β3*(Gender) + β4*(Price per Unit*Age Group) + β5*(Price per Unit*Gender) + ε
+Purpose: Understand how price impacts behavior across different groups.
+
+This model doesn’t just check average effects. It looks deeper into how price sensitivity changes depending on the shopper's age or gender.
+
+From an **industry perspective**, this type of model provides valuable insights into price sensitivity across different customer segments. For example:
+
+- Personalized pricing and promotions
+- Demand forecasting
+- Segmentation analysis
+- Strategic decision-making
