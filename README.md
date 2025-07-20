@@ -314,11 +314,37 @@ With our engineered dataset, we can move confidently into building models that p
 
 
 **03 Regression Model**
+
 To better understand the factors that drive product purchase quantity in a retail context, we developed a linear regression model using transactional data. The goal was to examine how unit price, customer demographics (age group and gender), and their interactions influence the quantity of items purchased in a single transaction.
+The team built a linear regression model to explore what influences the number of items (Quantity) purchased in each retail transaction.
+
+We wanted to understand what influences how many items a customer buys in a retail transaction.
+
+We looked at:
+
+The price of a product,
+
+The age group and gender of the customer, and
+
+How these factors might combine to affect shopping behavior.
+
+This helps answer questions like:
+
+Do younger people buy more when prices drop?
+
+Are men and women equally sensitive to price?
+
+Does price affect older customers differently?
 
 Model formula:
 Quantity = β0 + β1*(Price per Unit) + β2*(Age Group) + β3*(Gender) + β4*(Price per Unit*Age Group) + β5*(Price per Unit*Gender) + ε
 Purpose: Understand how price impacts behavior across different groups.
+This model allowed them to:
+
+Measure direct effects: e.g., "Do older people buy more?"
+
+Capture interaction effects: e.g., "Does price affect older people differently?"
+They also split the data into training and test sets to check generalizability.
 
 This model doesn’t just check average effects. It looks deeper into how price sensitivity changes depending on the shopper's age or gender.
 
@@ -328,3 +354,41 @@ From an **industry perspective**, this type of model provides valuable insights 
 - Demand forecasting
 - Segmentation analysis
 - Strategic decision-making
+
+Key Findings:
+
+ Insights:
+Price per unit: Slightly higher prices are linked to buying more, not less — which is unusual, but might happen with luxury or premium products.
+
+Age groups:
+
+Customers aged 25–60 tend to buy more items than those under 25.
+
+Gender: No clear difference — men and women bought similar quantities.
+
+- `Price per Unit`: Coefficient = +0.0017, p = 0.007, t = 2.72
+ 
+    Higher prices slightly increases Quantity on average. The effect is small but statistically significant at 1% level. 
+
+- `Gender` (Female vs. Male): Not significant (p = 0.559, t = 0.58)
+
+    No clear evidence of gender-based differences in purchase quantity.
+
+- `Age Groups`:
+ - `25-40`: Coefficient = +0.3823, p = 0.042, t = 2.04  -> Statistically significant at 5% level
+ - `40-60`: Coefficient = +0.3639, p = 0.039, t = 2.07  -> Statistically significant at 5% level
+ - `60+`: Not significant (p = 0.435)
+
+    Customers aged 25-60 buy slightly more than those under 25.
+
+
+- Interaction Terms:
+ - `Price * Age 25-40`: Negative, p = 0.023, t = -2.29  -> Statistically significant at 5% level
+ - `Price * Age 40-60`: Negative, p = 0.005, t = -2.84  -> Statistically significant at 1% level
+ - `Price * Age 60+`: Not significant
+ 
+    Higher prices reduce quantity more for age groups 25-60.
+ 
+ - `Price * Gender`: Not significant
+
+
