@@ -252,7 +252,7 @@ Age Groups: Customers aged 40-60 make the largest contribution, followed by thos
 ![alt text](images/01_data_exploration/AOV.png)
 
 - Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
- ![alt text](images/01_data_exploration/average_price_per_unit_product_category.png)
+ ![alt text](images/01_data_exploration/average_price_per_unit_by_product_category.png)
 
 These findings will guide our feature engineering and modeling decisions in the next phase.
   - 
