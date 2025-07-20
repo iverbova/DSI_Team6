@@ -127,7 +127,7 @@ Before modeling, we ensured our data was accurate. We removed duplicates, fixed 
 **Exploratory Insights**:
 Understanding these patterns can help businesses adjust pricing, better segment customers, and tailor campaigns more effectively.
 
-- Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year:
+ Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year:
 
 ![alt text](images/01_data_exploration/sales_trend_over_time.png)
 
@@ -135,7 +135,7 @@ Product Category: Electronics contributes the highest revenue, followed by Cloth
 ![alt text](images/01_data_exploration/total_sales_by_product_category.png)
 ![alt text](images/01_data_exploration/sales_distribution_by_product_category_pie.png)
 
-- Gender Split: Females account for slightly higher overall sales compared to males:
+Gender Split: Females account for slightly higher overall sales compared to males:
 - ![alt text](images/01_data_exploration/total_sales_by_gender.png)
   ![alt text](images/01_data_exploration/sales_distribution_by_gender.png)
 
@@ -143,14 +143,14 @@ Age Groups: Customers aged 40-60 make the largest contribution, followed by thos
     ![alt text](images/01_data_exploration/total_sales_by_age_group.png)
      ![alt text](images/01_data_exploration/sales_pie_by_age_group.png)
   
-- Average Order Value (AOV):  $456.00.
+Average Order Value (AOV):  $456.00.
 ![alt text](images/01_data_exploration/AOV.png)
 
-- Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
+Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
  ![alt text](images/01_data_exploration/average_price_per_unit_by_product_category.png)
 
 These findings will guide our feature engineering and modeling decisions in the next phase.
-  - 
+
  
 ## Feature Engineering
  Turning Raw Data into Insightful Features
