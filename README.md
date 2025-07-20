@@ -232,25 +232,25 @@ Exploratory Insights
 
 - Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year.
 
-![alt text](images/sales_trend_over_time.png)
+![alt text](images/01_data_exploration/sales_trend_over_time.png)
 
 Product Category: Electronics contributes the highest revenue, followed by Clothing and Beauty.
-![alt text](images/total_sales_by_product_category.png)
-![alt text](images/sales_distribution_by_product_category_pie.png)
+![alt text](images/01_data_exploration/total_sales_by_product_category.png)
+![alt text](images/01_data_exploration/sales_distribution_by_product_category_pie.png)
 
 - Gender Split: Females account for slightly higher overall sales compared to males.
-- ![alt text](images/total_sales_by_gender.png)
-  ![alt text](images/sales_distribution_by_gender.png)
+- ![alt text](images/01_data_exploration/total_sales_by_gender.png)
+  ![alt text](images/01_data_exploration/sales_distribution_by_gender.png)
 
   Age Segments: Customers aged 25-40 and 40-60 contribute the most to sales volume.
-    ![alt text](images/total_sales_by_age_group.png)
-     ![alt text](images/sales_distribution_by_age_group.png)
+    ![alt text](images/01_data_exploration/total_sales_by_age_group.png)
+     ![alt text](images/01_data_exploration/sales_distribution_by_age_group.png)
   
 - Average Order Value (AOV): Around $456.00.
 ![alt text](images/AOV.png)
 
   - Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
- ![alt text](images/average_price_per_unit_product_category.png)
+ ![alt text](images/01_data_exploration/average_price_per_unit_product_category.png)
 
 These findings will guide our feature engineering and modeling decisions in the next phase.
   - 
