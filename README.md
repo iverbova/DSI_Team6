@@ -279,7 +279,15 @@ To simplify linear regression modeling, we also create numeric encodings for:
 - Age Group: `<25` = 1, `25-40` = 2, `40-60` = 3, `60+` = 4
 - Product Category: Clothing = 1, Electronics = 2, Beauty = 3
 
-![alt text](images/01_data_exploration/feature_engineering_descision_table.jpg)
+| Feature                         | Type                                     | Reason                                                                                 |
+|---------------------------------|------------------------------------------|----------------------------------------------------------------------------------------|
+| Age Group                       | Categorical                              | Needed to evaluate interaction effects between age and price in regression. Binned into <25, 25-40, 40-60, 60+ for business relevance. |
+| High Spender                    | Binary                                   | Target variable for classification. Labeled as 1 if the transaction is in the top 25% of Total Amount. |
+| Month                            | Numeric                                  | Temporal feature to explore monthly patterns or seasonality.                            |
+| Day of Week                     | Numeric                                  | Helps identify weekday/weekend trends. Can be used to enrich predictions.               |
+| Avg Price per Item              | Numeric                                  | Provides insight into pricing behavior per transaction.                                |
+| Gender_*, ProductCategory_*, AgeGroup_* | One-hot encoded categorical vars         | Useful for classification models and non-linear ML algorithms. `drop_first=True` used to avoid dummy variable trap. |
+| Gender_Num, AgeGroup_Num, ProductCategory_Num | Numeric (label encoded)               | Added to support regression models (linear models often benefit from single numeric representations of categories). |
 
  Example: 
 From original:
