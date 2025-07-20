@@ -248,7 +248,7 @@ Age Groups: Customers aged 40-60 make the largest contribution, followed by thos
     ![alt text](images/01_data_exploration/total_sales_by_age_group.png)
      ![alt text](images/01_data_exploration/sales_pie_by_age_group.png)
   
-- Average Order Value (AOV): Around $456.00.
+- Average Order Value (AOV):  $456.00.
 ![alt text](images/01_data_exploration/AOV.png)
 
 - Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
