@@ -89,7 +89,7 @@ These stakeholders care about improving profitability, customer retention, and t
 
 ---
 
-**01 - Data Exploration**
+##  Data Exploration
 
 In this section, we take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
 
@@ -152,7 +152,7 @@ Age Groups: Customers aged 40-60 make the largest contribution, followed by thos
 These findings will guide our feature engineering and modeling decisions in the next phase.
   - 
  
-**02 - Feature Engineering**
+## Feature Engineering
  Turning Raw Data into Insightful Features
  
  Before a model can make good predictions, we need to give it the right data — this process is called feature engineering. We transformed basic retail data into useful features.
@@ -205,12 +205,6 @@ This is what feature engineering looks like — we convert human-friendly info i
 Our goal is to teach the model to recognize which customers are likely to spend more — so we created this target feature.
 
 With our engineered dataset, we can move confidently into building models that provide useful insights for decision-making.
-
-
-**03 Regression Model**
-
-To better understand the factors that drive product purchase quantity in a retail context, we developed a linear regression model using transactional data. The goal was to examine how unit price, customer demographics (age group and gender), and their interactions influence the quantity of items purchased in a single transaction.
-The team built a linear regression model to explore what influences the number of items (Quantity) purchased in each retail transaction.
 
 
 ## Regression Model
