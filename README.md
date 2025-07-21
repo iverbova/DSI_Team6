@@ -411,12 +411,12 @@ Conclusion:
 
 This project provided a comprehensive exploration of retail transaction data to uncover purchasing patterns and build predictive models for both purchase quantity and customer spending behavior.
 
--Our exploratory data analysis revealed clear trends in customer behavior by product category, gender, and age group. Electronics generated the most revenue, females slightly outspent males, and customers aged 40–60 emerged as the most active buyers. These insights are valuable for segmentation and marketing strategy.
+- Our exploratory data analysis revealed clear trends in customer behavior by product category, gender, and age group. Electronics generated the most revenue, females slightly outspent males, and customers aged 40–60 emerged as the most active buyers. These insights are valuable for segmentation and marketing strategy.
 
--Through feature engineering, we transformed raw retail data into meaningful variables, enabling more effective modeling. We encoded categorical variables, created temporal and demographic groupings, and defined a high-spending target variable, setting the foundation for both regression and classification tasks.
+- Through feature engineering, we transformed raw retail data into meaningful variables, enabling more effective modeling. We encoded categorical variables, created temporal and demographic groupings, and defined a high-spending target variable, setting the foundation for both regression and classification tasks.
 
--The regression model, built to predict quantity purchased, highlighted some statistically significant effects (such as price and age interactions), but overall showed weak explanatory power (R² = 0.014). This suggests that quantity decisions are likely influenced by additional unobserved factors not captured in the current dataset.
+- The regression model, built to predict quantity purchased, highlighted some statistically significant effects (such as price and age interactions), but overall showed weak explanatory power (R² = 0.014). This suggests that quantity decisions are likely influenced by additional unobserved factors not captured in the current dataset.
 
--The classification model, aimed at identifying high spenders using the K-Nearest Neighbors algorithm, achieved 81% overall accuracy, but demonstrated limited effectiveness in identifying true high spenders, with a recall of only 22%. The model favored the majority class (non-high spenders), a common issue when dealing with imbalanced data.
+- The classification model, aimed at identifying high spenders using the K-Nearest Neighbors algorithm, achieved 81% overall accuracy, but demonstrated limited effectiveness in identifying true high spenders, with a recall of only 22%. The model favored the majority class (non-high spenders), a common issue when dealing with imbalanced data.
 
 In summary, while some valuable insights were uncovered—particularly regarding age-based price sensitivity and spending concentration—both models have limitations in predictive power. Future work should explore more advanced algorithms, address class imbalance more directly, and incorporate additional variables such as promotions, time of day, and loyalty behavior to enhance model performance and business relevance.
