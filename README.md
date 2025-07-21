@@ -371,3 +371,23 @@ If k=5 and the nearest neighbors have labels [1, 0, 1, 1, 0] → the predicted l
 
 In case of a tie, behavior depends on the implementation (e.g., some libraries break ties by choosing the class with the lower label).
 
+**Confusion Matrix**
+![alt text](images/confusion_matrix.png)
+This heatmap shows how well the classifier predicted the two classes:
+
+True Positives (TP): 11 - Correctly predicted high spenders
+True Negatives (TN): 191 - Correctly predicted non-high spenders
+False Positives (FP): 9 - Non-high spenders misclassified as high
+False Negatives (FN): 39 - High spenders missed by the model
+It helps identify if the model is biased toward one class or struggles with imbalanced data.
+Model Performance Summary
+
+ Metric                              | Value                                                      |
+| ----------------------------------- | ---------------------------------------------------------- |
+| Best `k`                            | **2**                                                      |
+| Accuracy                            | **80.8%**                                                  |
+| Precision (High Spenders - Class 1) | **55%**                                                    |
+| Recall (High Spenders - Class 1)    | **22%**                                                    |
+| F1 Score (High Spenders)            | **31%**                                                    |
+
+
