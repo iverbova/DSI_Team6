@@ -419,4 +419,5 @@ This project provided a comprehensive exploration of retail transaction data to 
 
 - The classification model, aimed at identifying high spenders using the K-Nearest Neighbors algorithm, achieved 81% overall accuracy, but demonstrated limited effectiveness in identifying true high spenders, with a recall of only 22%. The model favored the majority class (non-high spenders), a common issue when dealing with imbalanced data.
 
-In summary, while some valuable insights were uncovered—particularly regarding age-based price sensitivity and spending concentration—both models have limitations in predictive power. Future work should explore more advanced algorithms, address class imbalance more directly, and incorporate additional variables such as promotions, time of day, and loyalty behavior to enhance model performance and business relevance.
+
+In summary, this project shows that leveraging data-driven marketing and advanced machine learning can greatly enhance the efficiency and impact of financial marketing efforts, leading to improved business results and more personalized client interactions.
