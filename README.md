@@ -396,4 +396,12 @@ Model Performance Summary
 | Recall (High Spenders - Class 1)    | **22%**                                                    |
 | F1 Score (High Spenders)            | **31%**                                                    |
 
+Main Takeaways::
 
+The model achieves a solid overall accuracy of 81%, showing it generally performs well across the board.
+
+However, it struggles with identifying actual high spenders, with a recall of only 22% — meaning many true high spenders go undetected. The model tends to be cautious in labeling someone as a high spender.
+
+When it does predict a customer is a high spender, it's correct about 55% of the time — this is the precision.
+
+The model leans toward predicting the majority class (non-high spenders), which is understandable given the imbalance in the data (only 50 out of 250 test cases are high spenders).
