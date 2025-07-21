@@ -373,7 +373,7 @@ In case of a tie, behavior depends on the implementation (e.g., some libraries b
 
 **Confusion Matrix**
 ![alt text](images/confusion_matrix.png)
-This heatmap shows how well the classifier predicted the two classes:
+- This heatmap shows how well the classifier predicted the two classes:
 
 True Positives (TP): 11 - Correctly predicted high spenders
 True Negatives (TN): 191 - Correctly predicted non-high spenders
