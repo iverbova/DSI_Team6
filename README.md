@@ -372,6 +372,7 @@ If k=5 and the nearest neighbors have labels [1, 0, 1, 1, 0] → the predicted l
 In case of a tie, behavior depends on the implementation (e.g., some libraries break ties by choosing the class with the lower label).
 
 **Confusion Matrix**
+
 ![alt text](images/confusion_matrix.png)
 - This heatmap shows how well the classifier predicted the two classes:
 
