@@ -377,10 +377,15 @@ In case of a tie, behavior depends on the implementation (e.g., some libraries b
 - This heatmap shows how well the classifier predicted the two classes:
 
 True Positives (TP): 11 - Correctly predicted high spenders
+
 True Negatives (TN): 191 - Correctly predicted non-high spenders
+
 False Positives (FP): 9 - Non-high spenders misclassified as high
+
 False Negatives (FN): 39 - High spenders missed by the model
+
 It helps identify if the model is biased toward one class or struggles with imbalanced data.
+
 Model Performance Summary
 
  Metric                              | Value                                                      |
