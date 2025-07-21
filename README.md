@@ -347,7 +347,7 @@ This ensures no feature (like Quantity) dominates others (like Gender).
 To find the best number of neighbors (k), we plot the error rate for values between 1 and 20.
 This helps us select the optimal k that balances bias and variance.
 
-![alt text](images/01_data_exploration/error_rate_vs_k_value.jpg)
+![alt text](images/error_rate_vs_k_value.jpg)
 
 The best value of k is: 2
 
