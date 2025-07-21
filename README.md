@@ -118,7 +118,6 @@ We worked with a clean dataset of 1,000 retail transactions. The key features in
 -  All columns are well-formatted. There are no missing or duplicate values, and the calculated field `Total Amount` is consistent with `Quantity * Price per Unit`.
 
  **Exploratory Data Analysis (EDA)**
-Before modeling, we ensured our data was accurate. We removed duplicates, fixed missing values, and validated key calculations like price x quantity.
 - This section explores key patterns in the dataset through visualizations:
 - Sales trends
 - Purchase behavior by category, gender, and age
