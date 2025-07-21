@@ -319,3 +319,55 @@ Predict Quantity purchased based on unit price, age group, gender, and their int
 
 - **Additional Notes**
 - To assess the model's ability to generalize beyond the data it was trained on, we randomly split the dataset into a training set (75%) and a test set (25%). The results indicate that the model performs poorly on unseen data with considerable percentage error in predictions.
+
+
+## Classification Model
+To classify high-spending customers based on demographics (gender, age group) and purchase attributes (product category and quantity) using the K-Nearest Neighbors algorithm.
+
+We are using the feature-engineered dataset that includes encoded categorical variables, numerical features, and a binary target variable High Spender.
+High Spender Label: Top 25% of customers labeled as "High Spender"
+
+Split Data: 75% for training the model, 25% for testing
+
+Standardization: Adjusted features so they are comparable (important for distance-based models like KNN)
+We defined a cutoff point (75th percentile):
+
+Customers who spent more than this value were labeled as High Spenders (1)
+Everyone else was labeled Not High Spenders (0)
+
+This gave us a binary classification task. 
+
+KNN compares distances between customers — it’s sensitive to feature scales.
+
+So we standardized features using Z-score normalization: z= (x−μ)/σ 
+ 
+This ensures no feature (like Quantity) dominates others (like Gender).
+**Best value for K:**
+
+To find the best number of neighbors (k), we plot the error rate for values between 1 and 20.
+This helps us select the optimal k that balances bias and variance.
+
+![alt text](images/01_data_exploration/error_rate_vs_k_value.jpg)
+
+The best value of k is: 2
+
+**Train KNN**
+
+We create a KNN classifier using k neighbors after finding the best value for K by Hyperparameter Tuning.
+KNN works by comparing each test point to the k closest training points and assigning the majority class among them.
+**KNN Distance Calculations:**
+
+Compute distance to all training points using Euclidean distance formula:
+
+distance: $d = \sqrt{(x_1 - x_1')^2 + (x_2 - x_2')^2 + \dots + (x_n - x_n')^2}$
+
+It picks K closest points from training set using the above distance.
+
+For classification, KNN checks the most frequent class among the k nearest neighbors.
+
+**Example:**
+
+If k=5 and the nearest neighbors have labels [1, 0, 1, 1, 0] → the predicted label is 1 (majority).
+
+In case of a tie, behavior depends on the implementation (e.g., some libraries break ties by choosing the class with the lower label).
+
