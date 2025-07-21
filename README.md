@@ -396,7 +396,7 @@ Model Performance Summary
 | Recall (High Spenders - Class 1)    | **22%**                                                    |
 | F1 Score (High Spenders)            | **31%**                                                    |
 
-Main Takeaways::
+Main Takeaways:
 
 The model achieves a solid overall accuracy of 81%, showing it generally performs well across the board.
 
