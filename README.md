@@ -134,6 +134,8 @@ Product Category: Electronics contributes the highest revenue, followed by Cloth
 ![alt text](images/01_data_exploration/total_sales_by_product_category.png)
 ![alt text](images/01_data_exploration/sales_distribution_by_product_category_pie.png)
 
+![Preview](images/01_data_exploration/Piechart_preview.png)}(images/01_data_exploration/sales_distribution_by_product_category_pie.png)
+
 Gender Split: Females account for slightly higher overall sales compared to males:
 - ![alt text](images/01_data_exploration/total_sales_by_gender.png)
   ![alt text](images/01_data_exploration/sales_distribution_by_gender.png)
