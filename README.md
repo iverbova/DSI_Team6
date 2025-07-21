@@ -407,7 +407,6 @@ When it does predict a customer is a high spender, it's correct about 55% of the
 
 The model leans toward predicting the majority class (non-high spenders), which is understandable given the imbalance in the data (only 50 out of 250 test cases are high spenders).
 
-Conclusion:
 
 ## Conclusion
 
