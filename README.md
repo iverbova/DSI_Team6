@@ -410,16 +410,14 @@ The model leans toward predicting the majority class (non-high spenders), which 
 
 
 ## Conclusion
+This project gave us a solid look into retail transaction data, helping us understand customer buying patterns and build models to predict both how much people buy and how much they spend.
 
-This project provided a comprehensive exploration of retail transaction data to uncover purchasing patterns and build predictive models for both purchase quantity and customer spending behavior.
+- From our data exploration, we found some interesting patterns: Electronics brought in the most revenue, women spent slightly more than men, and people aged 40 to 60 turned out to be the most active shoppers. These findings can really help with customer segmentation and marketing decisions.
 
-- Our exploratory data analysis revealed clear trends in customer behavior by product category, gender, and age group. Electronics generated the most revenue, females slightly outspent males, and customers aged 40–60 emerged as the most active buyers. These insights are valuable for segmentation and marketing strategy.
+- By engineering new features—like grouping ages, labeling top spenders, and converting categories into numbers—we turned raw data into something much more useful for building predictive models.
 
-- Through feature engineering, we transformed raw retail data into meaningful variables, enabling more effective modeling. We encoded categorical variables, created temporal and demographic groupings, and defined a high-spending target variable, setting the foundation for both regression and classification tasks.
+- Our regression model tried to predict purchase quantity and showed some meaningful links, especially between price and age. But with a low R² value (0.014), it’s clear that many other factors likely influence how much people buy—things we couldn’t capture with this dataset.
 
-- The regression model, built to predict quantity purchased, highlighted some statistically significant effects (such as price and age interactions), but overall showed weak explanatory power (R² = 0.014). This suggests that quantity decisions are likely influenced by additional unobserved factors not captured in the current dataset.
+- We also built a classification model using K-Nearest Neighbors to find high spenders. It reached 81% accuracy overall, but it struggled to correctly identify many actual high spenders (just 22% recall), mostly due to class imbalance—there were simply more low spenders in the data.
 
-- The classification model, aimed at identifying high spenders using the K-Nearest Neighbors algorithm, achieved 81% overall accuracy, but demonstrated limited effectiveness in identifying true high spenders, with a recall of only 22%. The model favored the majority class (non-high spenders), a common issue when dealing with imbalanced data.
-
-
-In summary, this project shows that leveraging data-driven marketing and advanced machine learning can greatly enhance the efficiency and impact of financial marketing efforts, leading to improved business results and more personalized client interactions.
+All in all, this project highlights how data-driven approaches and machine learning can provide valuable insights and improve the effectiveness of marketing strategies—making them more targeted, efficient, and impactful.
