@@ -65,15 +65,17 @@ These stakeholders care about improving profitability, customer retention, and t
 - Feature Engineering (pandas, one-hot encoding, quantile thresholds)
 - GitHub (collaboration and version control)
 - Multiple Linear Regression Model (statsmodels, sklearn)
-- 
-- 
+  
+
 
 ## Risks and Uncertainties
 
 - Dataset may lack granularity for some modeling tasks
 - Sample size (1,000 rows) may limit classification performance
+- A small sample size in a regression model can lead to unreliable coefficient estimates, inflated standard errors, and reduced statistical power, making it difficult to detect true relationships between variables.
+- Since the dataset used in this project is synthetic, it may not fully capture the complexity, variability, and noise present in real-world data, which could limit the generalizability of our model's performance.
 - Potential for overfitting if too many engineered features are added
-- The relationship between variables like age and quantity may be weak or non-linear
+- The relationship between variables like age, gender and quantity may be weak or non-linear
 
 ---
 
@@ -98,7 +100,6 @@ Objectives:
 Examine the dataset's structure
 Create exploratory visualizations
 Produce statistical summaries
-Identify insights to address business-related questions
 
 - Our main goal is to explore how factors like product price, product type, age, and gender influence buying habits and total sales.
 
@@ -121,7 +122,7 @@ We worked with a clean dataset of 1,000 retail transactions. The key features in
 - This section explores key patterns in the dataset through visualizations:
 - Sales trends
 - Purchase behavior by category, gender, and age
-- Average order values and price distributions
+- Average order values and price comparisons by product categories
 
 **Exploratory Insights**:
 Understanding these patterns can help businesses adjust pricing, better segment customers, and tailor campaigns more effectively.
@@ -168,7 +169,6 @@ These new features help our models recognize patterns more clearly — like spot
 
 At the end, we’ll export a clean `processed_data.csv` to be used for modeling.
 
-We grouped ages, tracked purchase timing, and tagged customers as high or low spenders — all of which helps our model understand behavior.
 
 To simplify linear regression modeling, we also create numeric encodings for:
 - Gender: Male = 0, Female = 1
@@ -214,8 +214,7 @@ With our engineered dataset, we can move confidently into building models that p
 To better understand the factors that drive product purchase quantity in a retail context, we developed a linear regression model using transactional data. The goal was to examine how unit price, customer demographics (age group and gender), and their interactions influence the quantity of items purchased in a single transaction.
 
 **Our model:** 
-
-Quantity = β0 + β1*(Price per Unit) + β2*(Age Group) + β3*(Gender) + β4*(Price per Unit*Age Group) + β5*(Price per Unit*Gender) + ε
+Quantity = β0 + β1*(Price per Unit) + β2*(Age Group) + β3*(Gender) + β4*(Price per UnitAge Group) + β5*(Price per Unit*Gender) + ε
 
 This specification allows us to capture both the main effects of price, age, and gender, and how these effects interact — particularly, whether price sensitivity differs by demographic group.
 
@@ -344,9 +343,11 @@ KNN compares distances between customers — it’s sensitive to feature scales.
 So we standardized features using Z-score normalization: z= (x−μ)/σ 
  
 This ensures no feature (like Quantity) dominates others (like Gender).
+
+
 **Best value for K:**
 
-To find the best number of neighbors (k), we plot the error rate for values between 1 and 20.
+To find the best number of neighbors (K), we plot the error rate for values between 1 and 20.
 This helps us select the optimal k that balances bias and variance.
 
 ![alt text](images/error_rate_vs_k_value.jpg)
@@ -357,6 +358,8 @@ The best value of k is: 2
 
 We create a KNN classifier using k neighbors after finding the best value for K by Hyperparameter Tuning.
 KNN works by comparing each test point to the k closest training points and assigning the majority class among them.
+
+
 **KNN Distance Calculations:**
 
 Compute distance to all training points using Euclidean distance formula:
@@ -388,7 +391,7 @@ False Negatives (FN): 39 - High spenders missed by the model
 
 It helps identify if the model is biased toward one class or struggles with imbalanced data.
 
-Model Performance Summary
+**Model Performance Summary**
 
  Metric                              | Value                                                      |
 | ----------------------------------- | ---------------------------------------------------------- |
@@ -420,4 +423,3 @@ This project gave us a solid look into retail transaction data, helping us under
 
 - We also built a classification model using K-Nearest Neighbors to find high spenders. It reached 81% accuracy overall, but it struggled to correctly identify many actual high spenders (just 22% recall), mostly due to class imbalance—there were simply more low spenders in the data.
 
-All in all, this project highlights how data-driven approaches and machine learning can provide valuable insights and improve the effectiveness of marketing strategies—making them more targeted, efficient, and impactful.
