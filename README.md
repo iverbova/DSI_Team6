@@ -65,15 +65,17 @@ These stakeholders care about improving profitability, customer retention, and t
 - Feature Engineering (pandas, one-hot encoding, quantile thresholds)
 - GitHub (collaboration and version control)
 - Multiple Linear Regression Model (statsmodels, sklearn)
-- 
-- 
+  
+
 
 ## Risks and Uncertainties
 
 - Dataset may lack granularity for some modeling tasks
 - Sample size (1,000 rows) may limit classification performance
+- A small sample size in a regression model can lead to unreliable coefficient estimates, inflated standard errors, and reduced statistical power, making it difficult to detect true relationships between variables.
+- Since the dataset used in this project is synthetic, it may not fully capture the complexity, variability, and noise present in real-world data, which could limit the generalizability of our model's performance.
 - Potential for overfitting if too many engineered features are added
-- The relationship between variables like age and quantity may be weak or non-linear
+- The relationship between variables like age, gender and quantity may be weak or non-linear
 
 ---
 
@@ -89,13 +91,130 @@ These stakeholders care about improving profitability, customer retention, and t
 
 ---
 
+##  Data Exploration
+
+We take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
+
+Objectives:
+
+Examine the dataset's structure
+Create exploratory visualizations
+Produce statistical summaries
+
+- Our main goal is to explore how factors like product price, product type, age, and gender influence buying habits and total sales.
+
+**Dataset Overview**
+
+We worked with a clean dataset of 1,000 retail transactions. The key features included product information, price, quantity, and demographic data like age and gender.
+
+- `Transaction ID`: Unique identifier per transaction
+- `Date`: Transaction date
+- `Customer ID`: Anonymized customer identifier
+- `Gender`: Customer gender
+- `Age`: Customer age
+- `Product Category`: Product type (Beauty, Clothing, Electronics)
+- `Quantity`: Number of items purchased
+- `Price per Unit`: Cost per item
+- `Total Amount`: Transaction value = `Quantity × Price per Unit`
+-  All columns are well-formatted. There are no missing or duplicate values, and the calculated field `Total Amount` is consistent with `Quantity * Price per Unit`.
+
+ **Exploratory Data Analysis (EDA)**
+- This section explores key patterns in the dataset through visualizations:
+- Sales trends
+- Purchase behavior by category, gender, and age
+- Average order values and price comparisons by product categories
+
+**Exploratory Insights**:
+Understanding these patterns can help businesses adjust pricing, better segment customers, and tailor campaigns more effectively.
+
+ Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year:
+
+![alt text](images/01_data_exploration/sales_trend_over_time.png)
+
+Product Category: Electronics contributes the highest revenue, followed by Clothing and Beauty:
+![alt text](images/01_data_exploration/total_sales_by_product_category.png)
+![alt text](images/01_data_exploration/sales_distribution_by_product_category_pie.png)
+
+<!-- [![Preview](images/01_data_exploration/Piechart_preview.png)](images/01_data_exploration/sales_distribution_by_product_category_pie.png) -->
+
+
+Gender Split: Females account for slightly higher overall sales compared to males:
+- ![alt text](images/01_data_exploration/total_sales_by_gender.png)
+  ![alt text](images/01_data_exploration/sales_distribution_by_gender.png)
+
+Age Groups: Customers aged 40-60 make the largest contribution, followed by those aged 25-40, who also significantly contribute to sales volume:
+    ![alt text](images/01_data_exploration/total_sales_by_age_group.png)
+     ![alt text](images/01_data_exploration/sales_pie_by_age_group.png)
+  
+Average Order Value (AOV):  $456.00.
+![alt text](images/01_data_exploration/AOV.png)
+
+Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
+ ![alt text](images/01_data_exploration/average_price_per_unit_by_product_category.png)
+
+These findings will guide our feature engineering and modeling decisions in the next phase.
+
+ 
+## Feature Engineering
+ Turning Raw Data into Insightful Features
+ 
+ Before a model can make good predictions, we need to give it the right data — this process is called feature engineering. We transformed basic retail data into useful features.
+These new features help our models recognize patterns more clearly — like spotting who’s a likely big spender or when sales spike during the week.
+
+-We will generate all relevant features needed for our classification and regression models, including:
+- Categorical encodings
+- Temporal features
+- Interaction-ready variables
+- Target variable for classification
+
+At the end, we’ll export a clean `processed_data.csv` to be used for modeling.
+
+
+To simplify linear regression modeling, we also create numeric encodings for:
+- Gender: Male = 0, Female = 1
+- Age Group: `<25` = 1, `25-40` = 2, `40-60` = 3, `60+` = 4
+- Product Category: Clothing = 1, Electronics = 2, Beauty = 3
+
+| Feature                         | Type                                     | Reason                                                                                 |
+|---------------------------------|------------------------------------------|----------------------------------------------------------------------------------------|
+| Age Group                       | Categorical                              | Needed to evaluate interaction effects between age and price in regression. Binned into <25, 25-40, 40-60, 60+ for business relevance. |
+| High Spender                    | Binary                                   | Target variable for classification. Labeled as 1 if the transaction is in the top 25% of Total Amount. |
+| Month                            | Numeric                                  | Temporal feature to explore monthly patterns or seasonality.                            |
+| Day of Week                     | Numeric                                  | Helps identify weekday/weekend trends. Can be used to enrich predictions.               |
+| Avg Price per Item              | Numeric                                  | Provides insight into pricing behavior per transaction.                                |
+| Gender_*, ProductCategory_*, AgeGroup_* | One-hot encoded categorical vars         | Useful for classification models and non-linear ML algorithms. `drop_first=True` used to avoid dummy variable trap. |
+| Gender_Num, AgeGroup_Num, ProductCategory_Num | Numeric (label encoded)               | Added to support regression models (linear models often benefit from single numeric representations of categories). |
+
+ Example: 
+From original:
+
+Age = 43
+
+Gender = Female
+
+Product = Electronics
+
+After Transformation:
+
+Age Group = 40–60
+
+Gender = 1
+
+Product Code = 2
+
+This is what feature engineering looks like — we convert human-friendly info into model-friendly numbers.
+
+Our goal is to teach the model to recognize which customers are likely to spend more — so we created this target feature.
+
+With our engineered dataset, we can move confidently into building models that provide useful insights for decision-making.
+
+
 ## Regression Model
 
 To better understand the factors that drive product purchase quantity in a retail context, we developed a linear regression model using transactional data. The goal was to examine how unit price, customer demographics (age group and gender), and their interactions influence the quantity of items purchased in a single transaction.
 
 **Our model:** 
-
-Quantity = β0 + β1*(Price per Unit) + β2*(Age Group) + β3*(Gender) + β4*(Price per Unit*Age Group) + β5*(Price per Unit*Gender) + ε
+Quantity = β0 + β1*(Price per Unit) + β2*(Age Group) + β3*(Gender) + β4*(Price per UnitAge Group) + β5*(Price per Unit*Gender) + ε
 
 This specification allows us to capture both the main effects of price, age, and gender, and how these effects interact — particularly, whether price sensitivity differs by demographic group.
 
@@ -202,4 +321,105 @@ Predict Quantity purchased based on unit price, age group, gender, and their int
 - **Additional Notes**
 - To assess the model's ability to generalize beyond the data it was trained on, we randomly split the dataset into a training set (75%) and a test set (25%). The results indicate that the model performs poorly on unseen data with considerable percentage error in predictions.
 
----
+
+## Classification Model
+To classify high-spending customers based on demographics (gender, age group) and purchase attributes (product category and quantity) using the K-Nearest Neighbors algorithm.
+
+We are using the feature-engineered dataset that includes encoded categorical variables, numerical features, and a binary target variable High Spender.
+High Spender Label: Top 25% of customers labeled as "High Spender"
+
+Split Data: 75% for training the model, 25% for testing
+
+Standardization: Adjusted features so they are comparable (important for distance-based models like KNN)
+We defined a cutoff point (75th percentile):
+
+Customers who spent more than this value were labeled as High Spenders (1)
+Everyone else was labeled Not High Spenders (0)
+
+This gave us a binary classification task. 
+
+KNN compares distances between customers — it’s sensitive to feature scales.
+
+So we standardized features using Z-score normalization: z= (x−μ)/σ 
+ 
+This ensures no feature (like Quantity) dominates others (like Gender).
+
+
+**Best value for K:**
+
+To find the best number of neighbors (K), we plot the error rate for values between 1 and 20.
+This helps us select the optimal k that balances bias and variance.
+
+![alt text](images/error_rate_vs_k_value.jpg)
+
+The best value of k is: 2
+
+**Train KNN**
+
+We create a KNN classifier using k neighbors after finding the best value for K by Hyperparameter Tuning.
+KNN works by comparing each test point to the k closest training points and assigning the majority class among them.
+
+
+**KNN Distance Calculations:**
+
+Compute distance to all training points using Euclidean distance formula:
+
+distance: $d = \sqrt{(x_1 - x_1')^2 + (x_2 - x_2')^2 + \dots + (x_n - x_n')^2}$
+
+It picks K closest points from training set using the above distance.
+
+For classification, KNN checks the most frequent class among the k nearest neighbors.
+
+**Example:**
+
+If k=5 and the nearest neighbors have labels [1, 0, 1, 1, 0] → the predicted label is 1 (majority).
+
+In case of a tie, behavior depends on the implementation (e.g., some libraries break ties by choosing the class with the lower label).
+
+**Confusion Matrix**
+
+![alt text](images/Confusion_matrix.png)
+- This heatmap shows how well the classifier predicted the two classes:
+
+True Positives (TP): 11 - Correctly predicted high spenders
+
+True Negatives (TN): 191 - Correctly predicted non-high spenders
+
+False Positives (FP): 9 - Non-high spenders misclassified as high
+
+False Negatives (FN): 39 - High spenders missed by the model
+
+It helps identify if the model is biased toward one class or struggles with imbalanced data.
+
+**Model Performance Summary**
+
+ Metric                              | Value                                                      |
+| ----------------------------------- | ---------------------------------------------------------- |
+| Best `k`                            | **2**                                                      |
+| Accuracy                            | **80.8%**                                                  |
+| Precision (High Spenders - Class 1) | **55%**                                                    |
+| Recall (High Spenders - Class 1)    | **22%**                                                    |
+| F1 Score (High Spenders)            | **31%**                                                    |
+
+**Main Takeaways**:
+
+The model achieves a solid overall accuracy of 81%, showing it generally performs well across the board.
+
+However, it struggles with identifying actual high spenders, with a recall of only 22% — meaning many true high spenders go undetected. The model tends to be cautious in labeling someone as a high spender.
+
+When it does predict a customer is a high spender, it's correct about 55% of the time — this is the precision.
+
+The model leans toward predicting the majority class (non-high spenders), which is understandable given the imbalance in the data (only 50 out of 250 test cases are high spenders).
+
+
+## Conclusion
+This project gave us a solid look into retail transaction data, helping us understand customer buying patterns and build models to predict both how much people buy and how much they spend.
+
+- From our data exploration, we found some interesting patterns: Electronics brought in the most revenue, women spent slightly more than men, and people aged 40 to 60 turned out to be the most active shoppers. These findings can really help with customer segmentation and marketing decisions.
+
+- By engineering new features—like grouping ages, labeling top spenders, and converting categories into numbers—we turned raw data into something much more useful for building predictive models.
+
+- Our regression model tried to predict purchase quantity and showed some meaningful links, especially between price and age. But with a low R² value (0.014), it’s clear that many other factors likely influence how much people buy—things we couldn’t capture with this dataset.
+
+- We also built a classification model using K-Nearest Neighbors to find high spenders. It reached 81% accuracy overall, but it struggled to correctly identify many actual high spenders (just 22% recall), mostly due to class imbalance—there were simply more low spenders in the data.
+
