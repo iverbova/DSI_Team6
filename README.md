@@ -135,7 +135,6 @@ Product Category: Electronics contributes the highest revenue, followed by Cloth
 ![alt text](images/01_data_exploration/total_sales_by_product_category.png)
 ![alt text](images/01_data_exploration/sales_distribution_by_product_category_pie.png)
 
-<!-- [![Preview](images/01_data_exploration/Piechart_preview.png)](images/01_data_exploration/sales_distribution_by_product_category_pie.png) -->
 
 
 Gender Split: Females account for slightly higher overall sales compared to males:
@@ -147,7 +146,7 @@ Age Groups: Customers aged 40-60 make the largest contribution, followed by thos
      ![alt text](images/01_data_exploration/sales_pie_by_age_group.png)
   
 Average Order Value (AOV):  $456.00.
-![alt text](images/01_data_exploration/AOV.png)
+![alt text](images/01_data_exploration/average_order_value.png)
 
 Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
  ![alt text](images/01_data_exploration/average_price_per_unit_by_product_category.png)
@@ -350,7 +349,7 @@ This ensures no feature (like Quantity) dominates others (like Gender).
 To find the best number of neighbors (K), we plot the error rate for values between 1 and 20.
 This helps us select the optimal k that balances bias and variance.
 
-![alt text](images/error_rate_vs_k_value.jpg)
+![alt text](images/04_classification_model/knn_error_rate_vs_KValue_plot.png)
 
 The best value of k is: 2
 
@@ -380,7 +379,7 @@ In case of a tie, behavior depends on the implementation (e.g., some libraries b
 
 **Confusion Matrix**
 
-![alt text](images/Confusion_matrix.png)
+![alt text](images/04_classification_model/knn_confusion_matrix.png)
 - This heatmap shows how well the classifier predicted the two classes:
 
 True Positives (TP): 11 - Correctly predicted high spenders
@@ -407,7 +406,7 @@ It helps identify if the model is biased toward one class or struggles with imba
 
 **Main Takeaways**:
 
-The model achieves a solid overall accuracy of 81%, showing it generally performs well across the board.
+The model achieves a solid overall accuracy of 80.8%, showing it generally performs well across the board.
 
 However, it struggles with identifying actual high spenders, with a recall of only 22% — meaning many true high spenders go undetected. The model tends to be cautious in labeling someone as a high spender.
 
