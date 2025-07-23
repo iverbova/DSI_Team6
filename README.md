@@ -5,7 +5,7 @@ This project is part of the Data Science Certificate program at the University o
 
 ## Dataset
 
-We are using the [Retail Sales Dataset](https://www.kaggle.com/datasets/mohammadtalib786/retail-sales-dataset), which contains transactional-level sales data including features such as date, product category, quantity, unit price, and revenue.
+We are using the [Retail Sales Dataset](https://www.kaggle.com/datasets/mohammadtalib786/retail-sales-dataset), which contains transactional-level sales data including information such as the date of purchase, customer gender and age, the type of product bought (product category), how many items were purchased, the price per item, and the total revenue generated from each transaction. This data allows us to explore shopping patterns and customer behavior across different groups.
 
 The raw dataset is stored in the `data/raw/` directory.
 
@@ -19,7 +19,7 @@ The raw dataset is stored in the `data/raw/` directory.
 
 ## Business Problem
 
-This project investigates purchasing behavior in the context of a small to medium-sized retail business. We aim to explore how **customer demographics** (age, gender) and **product features** (category, price) affect purchasing patterns.
+This project investigates purchasing behavior in the context of a small to medium-sized retail business. We aim to explore how **customer demographics** (age and gender) and **product features** (category and price) affect purchasing patterns.
 
 Specifically, we are exploring:
 - How sensitive different age groups and genders are to **price changes**.
@@ -29,34 +29,35 @@ The outcomes will help retail stakeholders make **more informed pricing decision
 
 ## Stakeholders
 
-Our key stakeholders include:
-- **Retail business owners and managers** who want to understand their customers better
+The primary stakeholders who will benefit from this project include:
+- **Retail business owners and managers** looking to better understand customer behavior and optimize sales performance
 - **Marketing teams** designing promotions and loyalty programs
-- **Pricing analysts** seeking insight into price elasticity by segment
+- **Pricing analysts** interested in understanding how different customer groups respond to price changes
 
-These stakeholders care about improving profitability, customer retention, and targeted customer experiences.
+These stakeholders are focused on improving profitability, increasing customer retention, and delivering more targeted, data-driven customer experiences.
 
 ---
 
 ## Business Questions
 
-1. **Regression Question**:  
+1. **Regression Question**: Price Sensitivity by Customer Segment 
    _Can we predict whether price per unit affects the quantity purchased differently across age groups or genders?_  
-   → This helps us identify **price sensitivity** in various customer segments.
+   → This helps us identify which customer segments are more **price sensitive**, supporting smarter pricing decisions.
 
-2. **Classification Question**:  
+2. **Classification Question**: Identifying High-Spending Customers
    _Can we classify whether a customer will be a high spender based on their demographics and purchase details?_  
-   → This supports **targeted engagement** of high-value customers.
+   → This enables **targeted marketing and personalized engagement** with valuable customers.
 
 ---
 
 ## Initial Dataset Review
 
-- The dataset is **clean and well-structured**.
+- The dataset is **clean, well-structured, and ready for analysis**.
 - No missing values or duplicates.
 - `Total Amount` is consistent with `Quantity × Price per Unit`.
-- Categorical fields (`Gender`, `Product Category`) are tidy and usable.
-- Contains sufficient diversity in ages, product categories, and purchase amounts to pursue both regression and classification tasks.
+- Categorical fields (`Gender`, `Product Category`) are well-defined and usable.
+- Contains sufficient diversity in ages, product categories, and purchase amounts, making it suitable for exploring both regression and classification questions.
+
 
 ## Methods & Technologies
 
@@ -67,15 +68,14 @@ These stakeholders care about improving profitability, customer retention, and t
 - Multiple Linear Regression Model (statsmodels, sklearn)
   
 
-
 ## Risks and Uncertainties
 
-- Dataset may lack granularity for some modeling tasks
-- Sample size (1,000 rows) may limit classification performance
+- The dataset may lack granularity for some modeling tasks.
+- The sample size is relatively small (1,000 rows), which may affect the accuracy and reliability of our classification models.
 - A small sample size in a regression model can lead to unreliable coefficient estimates, inflated standard errors, and reduced statistical power, making it difficult to detect true relationships between variables.
 - Since the dataset used in this project is synthetic, it may not fully capture the complexity, variability, and noise present in real-world data, which could limit the generalizability of our model's performance.
-- Potential for overfitting if too many engineered features are added
-- The relationship between variables like age, gender and quantity may be weak or non-linear
+- There is a risk of overfitting if too many derived features are included without careful validation.
+- Relationships between variables (e.g., age, gender, and quantity purchased) may be weak or non-linear, which can reduce model effectiveness.
 
 ---
 
@@ -93,15 +93,15 @@ These stakeholders care about improving profitability, customer retention, and t
 
 ##  Data Exploration
 
-We take an initial look at the Retail Sales Dataset and provide valuable insights that will guide future analysis.
+We take an initial look at the Retail Sales Dataset to uncover patterns and trends and provide valuable insights that will guide future analysis.
 
 Objectives:
 
-Examine the dataset's structure
-Create exploratory visualizations
-Produce statistical summaries
+- Examine the structure and contents of the dataset
+- Create exploratory visualizations to reveal patterns in purchasing behavior
+- Produce statistical summaries to identify key trends
 
-- Our main goal is to explore how factors like product price, product type, age, and gender influence buying habits and total sales.
+Hence, our main goal is to explore how factors like product price, product type, age, and gender influence customer buying habits and total sales performance.
 
 **Dataset Overview**
 
@@ -158,8 +158,8 @@ These findings will guide our feature engineering and modeling decisions in the 
 ## Feature Engineering
  Turning Raw Data into Insightful Features
  
- Before a model can make good predictions, we need to give it the right data — this process is called feature engineering. We transformed basic retail data into useful features.
-These new features help our models recognize patterns more clearly — like spotting who’s a likely big spender or when sales spike during the week.
+ To help our models make better predictions, we first needed to enhance the dataset by creating new, more informative features — this process is called feature engineering. We transformed the original retail data into features that could be used in further analysis. 
+ These new features help our models recognize patterns more clearly, such as who is more likely to make large purchases or when sales tend to peak.
 
 -We will generate all relevant features needed for our classification and regression models, including:
 - Categorical encodings
@@ -354,6 +354,7 @@ This helps us select the optimal k that balances bias and variance.
 
 The best value of k is: 2
 
+
 **Train KNN**
 
 We create a KNN classifier using k neighbors after finding the best value for K by Hyperparameter Tuning.
@@ -376,6 +377,7 @@ If k=5 and the nearest neighbors have labels [1, 0, 1, 1, 0] → the predicted l
 
 In case of a tie, behavior depends on the implementation (e.g., some libraries break ties by choosing the class with the lower label).
 
+
 **Confusion Matrix**
 
 ![alt text](images/Confusion_matrix.png)
@@ -391,6 +393,7 @@ False Negatives (FN): 39 - High spenders missed by the model
 
 It helps identify if the model is biased toward one class or struggles with imbalanced data.
 
+
 **Model Performance Summary**
 
  Metric                              | Value                                                      |
@@ -400,6 +403,7 @@ It helps identify if the model is biased toward one class or struggles with imba
 | Precision (High Spenders - Class 1) | **55%**                                                    |
 | Recall (High Spenders - Class 1)    | **22%**                                                    |
 | F1 Score (High Spenders)            | **31%**                                                    |
+
 
 **Main Takeaways**:
 
@@ -413,13 +417,23 @@ The model leans toward predicting the majority class (non-high spenders), which 
 
 
 ## Conclusion
-This project gave us a solid look into retail transaction data, helping us understand customer buying patterns and build models to predict both how much people buy and how much they spend.
 
-- From our data exploration, we found some interesting patterns: Electronics brought in the most revenue, women spent slightly more than men, and people aged 40 to 60 turned out to be the most active shoppers. These findings can really help with customer segmentation and marketing decisions.
+This project explored how customer demographics and product features influence purchasing behavior in a retail setting. We analyzed patterns in spending and built models to predict both quantity purchased and likelihood of being a high spender.
 
-- By engineering new features—like grouping ages, labeling top spenders, and converting categories into numbers—we turned raw data into something much more useful for building predictive models.
+- Data exploration revealed that electronics generated the most revenue, women spent slightly more than men, and customers aged 40–60 were the most active shoppers — useful insights for segmentation and marketing.
 
-- Our regression model tried to predict purchase quantity and showed some meaningful links, especially between price and age. But with a low R² value (0.014), it’s clear that many other factors likely influence how much people buy—things we couldn’t capture with this dataset.
+- By engineering new features —like grouping ages, labeling top spenders, and converting categories into numbers— we turned raw data into something much more useful for building predictive models.
 
-- We also built a classification model using K-Nearest Neighbors to find high spenders. It reached 81% accuracy overall, but it struggled to correctly identify many actual high spenders (just 22% recall), mostly due to class imbalance—there were simply more low spenders in the data.
+- The regression model showed that price per unit, age groups 25–60, and their interaction terms were statistically significant, suggesting they help explain quantity purchased. However, the model had low R² and F-statistic, indicating limited overall predictive power — likely due to missing key factors not captured in the dataset.
 
+- We also built a classification model using K-Nearest Neighbors to find high spenders. This model reached 81% accuracy overall, but it struggled to correctly identify many actual high spenders (just 22% recall), mostly due to class imbalance — there were simply more low spenders in the data.
+
+- Although our models are based on a synthetic dataset, they demonstrate how data-driven tools can support retail strategy in the real world. For example:
+
+   - Pricing teams could use price sensitivity insights by age or gender to adjust promotions.
+
+   - Marketing teams could tailor outreach toward segments identified as high-value customers.
+
+   - Customer analytics teams could apply similar models to real transaction data to predict spending behavior, enhance personalization, and improve customer lifetime value.
+
+- With real-world data and ongoing refinement, these models could become part of a broader decision-support system, helping retailers make smarter, more targeted choices that improve both customer experience and business outcomes.
