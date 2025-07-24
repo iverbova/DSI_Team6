@@ -157,25 +157,25 @@ Understanding these patterns can help businesses adjust pricing, better segment 
 Sales Trend: Sales fluctuate across dates with noticeable spikes around mid-year:
 
 <p align="center">
-  <img src="images/01_data_exploration/sales_trend_over_time.png" alt="Sales Trend Over Time" width="45%">
+  <img src="images/01_data_exploration/sales_trend_over_time.png" alt="Sales Trend Over Time" width="75%">
 </p>
 
 Product Category: Electronics contributes the highest revenue, followed by Clothing and Beauty:
 
 <p align="center">
   <img src="images/01_data_exploration/total_sales_by_product_category.png" 
-       alt="Total Sales by Product Category" width="30%" height="500px" style="margin-right:20px;">
+       alt="Total Sales by Product Category" width="48%" height="600px" style="margin-right:20px;">
   <img src="images/01_data_exploration/sales_distribution_by_product_category_pie.png" 
-       alt="Sales Distribution by Product Category" width="30%" height="500px">
+       alt="Sales Distribution by Product Category" width="48%" height="600px">
 </p>
 
 Gender Split: Females account for slightly higher overall sales compared to males:
 
 <p align="center">
   <img src="images/01_data_exploration/total_sales_by_gender.png" 
-       alt="Total Sales by Gender" width="30%" height="500px" style="margin-right:20px;">
+       alt="Total Sales by Gender" width="48%" height="600px" style="margin-right:20px;">
   <img src="images/01_data_exploration/sales_distribution_by_gender.png" 
-       alt="Sales Distribution by Gender" width="30%" height="500px">
+       alt="Sales Distribution by Gender" width="48%" height="600px">
 </p>
 
 
@@ -183,22 +183,22 @@ Age Groups: Customers aged 40-60 make the largest contribution, followed by thos
 
 <p align="center">
   <img src="images/01_data_exploration/total_sales_by_age_group.png" 
-       alt="Total Sales by Age Group" width="30%" height="500px" style="margin-right:20px;">
+       alt="Total Sales by Age Group" width="48%" height="600px" style="margin-right:20px;">
   <img src="images/01_data_exploration/sales_pie_by_age_group.png" 
-       alt="Sales Pie by Age Group" width="30%" height="500px">
+       alt="Sales Pie by Age Group" width="48%" height="600px">
 </p>
 
   
 Average Order Value (AOV):  $456.00.
 
 <p align="center">
-  <img src="images/01_data_exploration/average_order_value.png" alt="Average Order Value" width="30%">
+  <img src="images/01_data_exploration/average_order_value.png" alt="Average Order Value" width="60%">
 </p>
 
 Price per Unit: Beauty items have the highest average price per unit, while Clothing is the most affordable category.
 
 <p align="center">
-  <img src="images/01_data_exploration/average_price_per_unit_by_product_category.png" alt="Average Price per Unit by Product Category" width="30%">
+  <img src="images/01_data_exploration/average_price_per_unit_by_product_category.png" alt="Average Price per Unit by Product Category" width="60%">
 </p>
 
 
@@ -379,7 +379,7 @@ The aim was to determine whether we can predict if a customer is likely to be a 
    The optimal **K = 2** was chosen for best performance.
 
 <p align="center">
-  <img src="images/04_classification_model/knn_error_rate_vs_KValue_plot.png" alt="KNN Error Rate vs K Value" width="35%">
+  <img src="images/04_classification_model/knn_error_rate_vs_KValue_plot.png" alt="KNN Error Rate vs K Value" width="60%">
 </p>
 
 The best value of k is: 2
@@ -405,7 +405,7 @@ In case of a tie, behavior depends on the implementation (e.g., some libraries b
 **Confusion Matrix**
 
 <p align="center">
-  <img src="images/04_classification_model/knn_confusion_matrix.png" alt="KNN Confusion Matrix" width="35%">
+  <img src="images/04_classification_model/knn_confusion_matrix.png" alt="KNN Confusion Matrix" width="60%">
 </p>
 
 **Confusion Matrix:**  
