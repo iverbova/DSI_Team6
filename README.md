@@ -85,7 +85,7 @@ These stakeholders are focused on improving profitability, increasing customer r
 
 ---
 
-## Tasks & Timeline
+## Project Tasks & Responsibilities
 
 | Team Member | Task |
 |-------------|------|
@@ -95,6 +95,7 @@ These stakeholders are focused on improving profitability, increasing customer r
 | Tetiana     | Writing conclusions, maintaining narrative |
 | Mandy       | Presentation development |
 
+Our project timeline proceeded as planned, with all tasks completed according to schedule.
 ---
 
 ## Review Process
@@ -138,11 +139,13 @@ We worked with a clean dataset of 1,000 retail transactions. The key features in
 - `Total Amount`: Transaction value = `Quantity × Price per Unit`
 -  All columns are well-formatted. There are no missing or duplicate values, and the calculated field `Total Amount` is consistent with `Quantity * Price per Unit`.
 
- **Exploratory Data Analysis (EDA)**
-      We conducted extensive exploratory data analysis (EDA), including:
-      - **Sales Trends:** Time-series analysis of total sales over the year.  
-      - **Customer Segmentation:** Sales by product category, gender, and age group.  
-      - **Key Metrics:** Average order value (AOV), average price per unit, and correlation between numerical features.  
+**Exploratory Data Analysis (EDA)**  
+
+We conducted extensive exploratory data analysis (EDA), including:
+
+- **Sales Trends:** Time-series analysis of total sales over the year.  
+- **Customer Segmentation:** Sales by product category, gender, and age group.  
+- **Key Metrics:** Average order value (AOV), average price per unit, and correlation between numerical features.  
 
 
 **Exploratory Insights**:
@@ -320,14 +323,14 @@ strong multicollinearity or other numerical problems.
 Predict Quantity purchased based on unit price, age group, gender, and their interactions.
 
 **Model Fit:**
-- **R² = 0.014**, Adj. R² = 0.002 → Model has weak explanatory power.
-- **F-statistic p = 0.310** → Predictors collectively are not significant.
+- **R² = 0.014**, Adj. R² = 0.002 → The model has weak explanatory power.
+- **F-statistic: 1.172, p = 0.310** → Our predictors jointly do not explain the variation in quantity.
 - Residual analysis indicates potential model misspecification.
 
 **Key Findings:**
 
-- `Price per Unit`: Higher prices slightly increases quantity on average. The effect is small but statistically significant, p = 0.007. 
-- `Gender` (Female vs. Male): No significant effect on purchase quantity.
+- `Price per Unit`: Higher prices slightly increases quantity on average. The effect is small but statistically significant (p = 0.007).
+- `Gender` (Female vs. Male): No significant effect of gender-based differences on quantity purchased.
 - `Age Groups`: Customers aged 25–60 purchase slightly more than those under 25.
 
 **Interaction Terms:**
@@ -475,7 +478,7 @@ This project examined how **customer demographics** (age, gender) and **product 
 ### Business Implications
 Although our dataset is implied to be synthetic, the project demonstrates how **data-driven approaches** can guide real-world retail strategies:
 - **Pricing Teams** can use price sensitivity insights by age group to adjust promotions or discounts.
-- **Marketing Teams** can design campaigns targeting the 40–60 age group and other high-value segments.
+- **Marketing Teams** can design campaigns targeting the 25–60 age group and other high-value segments.
 - **Customer Analytics Teams** can adapt similar models to real transaction data for predicting spending behavior and improving customer lifetime value.
 ---
 
