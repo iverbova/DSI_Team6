@@ -498,8 +498,8 @@ This project demonstrates a complete data science workflow — from **data explo
 ## Team Video Reflections
 
 - Iryna Verbova ([iverbova](https://youtu.be/S3OtZOJ4q-A))
-- Tetiana Hakansson ([t125yf](link_to_video))
-- Rabia Imra Kirli Ozis ([rabiaimra](link_to_video))
-- Ting Man ([manntintin](link_to_video))
-- Vrushali Patil ([vrushalipatil9763](link_to_video))
+- Tetiana Hakansson ([t125yf](https://youtu.be/MtyteRAxPO8))
+- Rabia Imra Kirli Ozis ([rabiaimra](https://drive.google.com/file/d/1syPz0GiYqA36Pb1WEqwZamnbEyRPp9lD/view?usp=sharing))
+- Ting Man ([manntintin](https://drive.google.com/file/d/1sO09hChKrCd1FUH1l1IJ_FU2oRruSszJ/view?usp=drive_link))
+- Vrushali Patil ([vrushalipatil9763](https://www.youtube.com/watch?v=bCf3B893OAs))
 
